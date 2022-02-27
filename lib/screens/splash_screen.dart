@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:belli/screens/login/login_screen.dart';
+import 'package:belli/models/navigate_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,13 +13,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     timer();
   }
 
   timer() {
-    Timer(const Duration(seconds: 5),()=> Navigator.pushReplacementNamed(context, LoginScreen.id));
+    Timer(const Duration(seconds: 5),()=> Navigator.pushReplacementNamed(context, NavigatePage.id));
   }
 
   @override

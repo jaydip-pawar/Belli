@@ -1,5 +1,8 @@
+import 'package:belli/providers/authentication_provider.dart';
+import 'package:belli/screens/login/signup_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String id = 'login-screen';
@@ -11,9 +14,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final authentication = Provider.of<AuthenticationProvider>(context);
+    final authentication = Provider.of<AuthenticationProvider>(context);
     return Scaffold(
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(left: 16, right: 16),
@@ -64,15 +68,13 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
                   TextField(
                     controller: _passwordController,
                     decoration: InputDecoration(
                       labelText: "Password",
                       labelStyle:
-                      TextStyle(fontSize: 14, color: Colors.grey.shade400),
+                          TextStyle(fontSize: 14, color: Colors.grey.shade400),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(
@@ -86,19 +88,16 @@ class LoginScreen extends StatelessWidget {
                           )),
                     ),
                   ),
-                  const SizedBox(
-                    height: 12,
-                  ),
+                  const SizedBox(height: 12),
                   const Align(
                     alignment: Alignment.topRight,
                     child: Text(
                       "Forgot Password ?",
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
+                  const SizedBox(height: 30),
                   Container(
                     height: 50,
                     width: double.infinity,
@@ -106,7 +105,7 @@ class LoginScreen extends StatelessWidget {
                       onPressed: () {
                         String _email = _emailController.text;
                         String _password = _passwordController.text;
-                        // authentication.login(_email, _password, context);
+                        authentication.login(_email, _password, context);
                       },
                       padding: const EdgeInsets.all(0),
                       child: Ink(
@@ -140,15 +139,13 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
                   Container(
                     height: 50,
                     width: double.infinity,
                     child: MaterialButton(
                       // onPressed: () => authentication.signInWithGoogle(),
-                      onPressed: (){},
+                      onPressed: () {},
                       color: Colors.indigo.shade50,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6),
@@ -174,9 +171,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
+                  const SizedBox(height: 30),
                 ],
               ),
               Padding(
@@ -189,12 +184,7 @@ class LoginScreen extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) {
-                        //       return SignupPage();
-                        //     }));
-                      },
+                      onTap: () => Navigator.pushNamed(context, SignupPage.id),
                       child: const Text(
                         "Sign up",
                         style: TextStyle(
