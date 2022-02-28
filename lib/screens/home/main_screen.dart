@@ -1,8 +1,7 @@
 import 'package:belli/screens/home/sub_screens/favourite_screen.dart';
-import 'package:belli/screens/home/sub_screens/home_screen.dart';
+import 'package:belli/screens/home/sub_screens/home_screen/home_screen.dart';
 import 'package:belli/screens/home/sub_screens/my_orders_screen.dart';
 import 'package:belli/screens/home/sub_screens/profile_screen.dart';
-import 'package:belli/screens/home/widgets/cart/cart_notification.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';

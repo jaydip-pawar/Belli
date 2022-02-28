@@ -12,6 +12,11 @@ double height(BuildContext context) {
   return MediaQuery.of(context).size.height;
 }
 
+const kStoreCardStyle = TextStyle(
+    fontSize: 15,
+    color: Colors.grey
+);
+
 Map<String, Widget Function(BuildContext)> routes = {
   SplashScreen.id : (context) => const SplashScreen(),
   NavigatePage.id : (context) => NavigatePage(),

@@ -1,5 +1,7 @@
 import 'package:belli/constants.dart';
 import 'package:belli/providers/authentication_provider.dart';
+import 'package:belli/providers/cart_provider.dart';
+import 'package:belli/providers/hotel_provider.dart';
 import 'package:belli/screens/splash_screen.dart';
 import 'package:belli/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,12 +16,12 @@ void main() {
           ChangeNotifierProvider(
             create: (_) => AuthenticationProvider(),
           ),
-          // ChangeNotifierProvider(
-          //   create: (_) => LocationProvider(),
-          // ),
-          // ChangeNotifierProvider(
-          //   create: (_) => StoreProvider(),
-          // ),
+          ChangeNotifierProvider(
+            create: (_) => CartProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => HotelProvider(),
+          ),
           // ChangeNotifierProvider(
           //   create: (_) => CartProvider(),
           // ),
